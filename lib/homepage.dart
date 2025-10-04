@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_app/models/todo.dart';
 import 'package:todo_app/providers/filters.dart';
-import 'package:todo_app/providers/providers.dart';
+import 'package:todo_app/providers/todos_provider.dart';
 import 'package:todo_app/widgets/bottom_sheets_add_todo.dart';
 import 'package:todo_app/widgets/bottom_sheets_edit_todo.dart';
 

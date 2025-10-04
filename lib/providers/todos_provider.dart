@@ -4,7 +4,7 @@ import 'package:todo_app/models/todo.dart';
 import 'package:todo_app/repositories/todo_repository.dart';
 import 'package:uuid/uuid.dart';
 
-part 'todos.g.dart';
+part 'todos_provider.g.dart';
 
 @riverpod
 AppDatabase appDatabase(Ref ref) => AppDatabase();
@@ -14,7 +14,7 @@ DriftTodoRepository todoRepository(Ref ref) =>
     DriftTodoRepository(ref.watch(appDatabaseProvider));
 
 @riverpod
-class Providers extends _$Providers {
+class Todos extends _$Todos {
   @override
   FutureOr<List<Todo>> build() async {
     final repo = ref.watch(todoRepositoryProvider);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_app/models/todo.dart';
-import 'package:todo_app/providers/providers.dart';
+import 'package:todo_app/providers/todos_provider.dart';
 
 class AddTodoSheet extends ConsumerStatefulWidget {
   const AddTodoSheet({super.key});

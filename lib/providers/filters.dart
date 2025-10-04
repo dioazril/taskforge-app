@@ -1,7 +1,7 @@
 // lib/features/todo/application/filters.dart
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:todo_app/models/todo.dart';
-import 'providers.dart';
+import 'todos_provider.dart';
 
 part 'filters.g.dart';
 

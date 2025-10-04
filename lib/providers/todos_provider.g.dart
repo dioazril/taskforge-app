@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'providers.dart';
+part of 'todos_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -97,11 +97,10 @@ final class TodoRepositoryProvider
 
 String _$todoRepositoryHash() => r'2d2ae76221271192fa7db01f086a6a807665360d';
 
-@ProviderFor(Providers)
+@ProviderFor(Todos)
 const todosProvider = TodosProvider._();
 
-final class TodosProvider
-    extends $AsyncNotifierProvider<Providers, List<Todo>> {
+final class TodosProvider extends $AsyncNotifierProvider<Todos, List<Todo>> {
   const TodosProvider._()
     : super(
         from: null,
@@ -118,12 +117,12 @@ final class TodosProvider
 
   @$internal
   @override
-  Providers create() => Providers();
+  Todos create() => Todos();
 }
 
 String _$todosHash() => r'f6b88a0ddb69fa182cef50ca6d6e786fd9b3bdd0';
 
-abstract class _$Providers extends $AsyncNotifier<List<Todo>> {
+abstract class _$Todos extends $AsyncNotifier<List<Todo>> {
   FutureOr<List<Todo>> build();
   @$mustCallSuper
   @override
