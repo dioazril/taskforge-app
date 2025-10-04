@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todo_app/homepage.dart';
+import 'package:todo_app/observer.dart';
+import 'package:todo_app/screens/homescreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(ProviderScope(observers: [Observer()], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Todo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.indigo),
-      home: const TodoHomePage(),
+      home: const HomeScreen(),
     );
   }
 }
