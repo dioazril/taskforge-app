@@ -1,16 +1,63 @@
-# todo_app
+# TaskForge App
 
-A new Flutter project.
+A modern, local‑first Todo app built with Flutter, Riverpod 3 (codegen), and Drift for reactive, type‑safe persistence. It features rich task modeling (priority, status, dates, tags, reminders, subtasks), smooth UI with implicit animations, and a clean, testable architecture
+
+## Features
+  - Rich task model: title, description, dates (start/due/completed), status, priority, tags, reminders, recurrence, and checklists.
+  
+  - Reactive state with Riverpod 3 and generated providers for type-safe updates and composable filters/sorters.
+  
+  - Local persistence using Drift (SQLite) with DAOs, transactions, batch writes, and background database execution.
+  
+  - Simple, responsive UI with search, filters, bottom-sheet forms, AnimatedSwitcher transitions, and swipe-to-delete.
+  
+  - Linting and codegen pipeline: riverpod_lint, custom_lint, build_runner, and mapper generation for models.
+
+## Tech stack
+  - Flutter, Dart, Material 3 UI.
+  
+  - Riverpod 3, riverpod_annotation, codegen with riverpod_generator.
+  
+  - Drift (SQLite), drift_dev, drift_flutter, sqlite3_flutter_libs.
+  
+  - dart_mappable for model mapping (toJson/fromJson/copyWith/equality).
+  
+  - uuid for unique IDs.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+  - Flutter SDK installed and configured (stable channel recommended).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+  - Dart SDK compatible with the project’s constraints.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Clone and install
+
+    ``
+    git clone https://github.com/<username>/taskforge-app.git
+    ``
+    
+    ``
+    cd taskforge-app
+    ``
+    
+    ``
+    flutter pub get
+    ``
+    
+    ``
+    dart run build_runner watch -d
+    ``
+    
+    ``flutter run``
+
+
+## Scripts
+  Generate once: ``dart run build_runner build --delete-conflicting-outputs``
+  
+  Continuous generation: ``dart run build_runner watch -d``
+  
+  Analyze and lint: flutter analyze and custom lint rules via riverpod_lint/custom_lint.
+
+
