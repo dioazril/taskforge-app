@@ -6,14 +6,14 @@ import 'package:todo_app/providers/todos_provider.dart';
 import 'package:todo_app/widgets/bottom_sheets_add_todo.dart';
 import 'package:todo_app/widgets/bottom_sheets_edit_todo.dart';
 
-class TodoHomePage extends ConsumerStatefulWidget {
-  const TodoHomePage({super.key});
+class HomeScreen extends ConsumerStatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  ConsumerState<TodoHomePage> createState() => _TodoHomePageState();
+  ConsumerState<HomeScreen> createState() => _TodoHomePageState();
 }
 
-class _TodoHomePageState extends ConsumerState<TodoHomePage> {
+class _TodoHomePageState extends ConsumerState<HomeScreen> {
   final _searchCtrl = TextEditingController();
 
   @override
