@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_app/models/todo.dart';
 import 'package:todo_app/providers/filters.dart';
 import 'package:todo_app/providers/todos_provider.dart';
+import 'package:todo_app/utils/utils_provider.dart';
 import 'package:todo_app/widgets/bottom_sheets_add_todo.dart';
 import 'package:todo_app/widgets/bottom_sheets_edit_todo.dart';
 
@@ -28,6 +29,7 @@ class _TodoHomePageState extends ConsumerState<HomeScreen> {
     final status = ref.watch(statusFilterProvider);
     final priority = ref.watch(priorityFilterProvider);
     final sortMode = ref.watch(sorterProvider);
+    final isLightTheme = ref.watch(isLightThemeProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -53,9 +55,11 @@ class _TodoHomePageState extends ConsumerState<HomeScreen> {
             ],
           ),
           IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () => _openAddTodoSheet(context),
-            tooltip: 'Add',
+            icon: isLightTheme
+                ? const Icon(Icons.dark_mode)
+                : const Icon(Icons.light_mode),
+            onPressed: () => ref.read(isLightThemeProvider.notifier).toggle(),
+            tooltip: 'Toggle theme',
           ),
         ],
       ),
